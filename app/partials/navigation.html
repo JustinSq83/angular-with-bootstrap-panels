@@ -1,0 +1,39 @@
+<header class="navbar-default" role="banner">
+	<div class="container">
+	  	<nav role="navigation">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" ui-sref-active="active" ui-sref="base.codes">DME Denial Guide</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <form class="navbar-form navbar-left" role="search">
+	        <div class="form-group">
+	          <input type="text" class="form-control" placeholder="Search" ng-model="searchtext">
+	        </div>
+	        <button type="submit" class="btn btn-default">Submit</button>
+	      </form>
+	      <ul class="nav navbar-nav navbar-right">
+	        <li ui-sref-active="active"><a ui-sref="base.about">About<span class="sr-only">(current)</span></a></li>
+	        <li ui-sref-active="active"><a ui-sref="base.resources">Resources<span class="sr-only">(current)</span></a></li>
+	        <li ui-sref-active="active"><a ui-sref="base.contact">Contact<span class="sr-only">(current)</span></a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </nav>
+	</div>
+</header>
+
+<div ui-view></div>
+
+<footer class="navbar navbar-default navbar-fixed-bottom">
+	<div class="container">
+	<p>©2016 DMEDenialGuide.com <small> All Rights Reserved</small></p>									
+	</div>
+</footer>

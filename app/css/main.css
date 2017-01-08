@@ -1,0 +1,79 @@
+li.footer {
+    color: #999999;
+}
+
+p {
+    color: #999999;
+    text-align: center;
+    padding-top: 12px;
+}
+
+body { 
+	padding-bottom: 70px;
+}
+
+strong {
+	font-size: 22px;
+}
+
+.dropdown {
+	text-align: right;
+}
+
+.navbar-default {
+	background: #f8f8f8;
+	border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  	color: #555;
+  	background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: transparent;
+}
+
+body {
+  background: url(https://shariaunveiled.files.wordpress.com/2012/07/statue-of-liberty-face-sketch-drawing.jpg) no-repeat center center fixed; 
+-webkit-background-size: 74.8%;
+-moz-background-size: 74.8%;
+-o-background-size: 74.8%;
+background-size: 74.8%;
+background-position: 50% 30%;
+}
+
+.panel-default {
+  background: rgba(255, 255, 255, 0.5);
+  color: #000000;
+  border-color: (221,221,221, 0.5);
+  font-size: 22px;
+}
+
+.panel-default > .panel-body {
+  background: rgba(255, 255, 255, 0.5);
+  color: #000000;
+  font-size: 22px;
+}
+
+.panel-default > .panel-heading {
+  background: rgba(230, 230, 230, 0.5);
+  color: #000000;
+  border-color: (221,221,221, 0.5);
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000000;
+  border-color: (221,221,221, 0.5);
+}
+
+.page-header {
+  border-bottom-color: rgba(221, 221, 221, 0.5);
+
+

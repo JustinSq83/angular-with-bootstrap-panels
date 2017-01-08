@@ -1,0 +1,13 @@
+{{::error}}
+<br /><br />
+<div class="container" ng-repeat="code in codes | denialCodeFilter: searchtext">
+	<div class="page-header">
+    	<h1>{{::code.denial_code_pre}} <small>{{::code.denial_code_num}}</small></h1>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">{{::code.denial_code_explanation}}</div>
+		<div class="panel-body">{{::code.denial_code_action}}</div>
+	</div>
+</div>
+
+		  
