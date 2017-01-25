@@ -1,5 +1,4 @@
 <?php
-
 require 'connect.php';
 
 $sql = "SELECT * FROM denial_code";
@@ -41,5 +40,4 @@ echo json_encode($result);
 //     }
 	
 // }
-
 ?>
