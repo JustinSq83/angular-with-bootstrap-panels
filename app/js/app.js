@@ -1,10 +1,11 @@
 angular.module('denialGuideApp', ['ui.router'])
-.config (function  ($stateProvider, $urlRouterProvider, $locationProvider) {
+.config (["$stateProvider", "$urlRouterProvider", "$locationProvider", function  ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider.
         state({
+            abstract: true,
             name: 'base',
             url: "/",
-            templateUrl: "partials/navigation.html"
+            templateUrl: "partials/navigation.html",
         }).
         state({
             name: 'base.codes',
@@ -30,9 +31,19 @@ angular.module('denialGuideApp', ['ui.router'])
         });
     $urlRouterProvider.otherwise("/codes");
     $locationProvider.html5Mode(true)
-})
+}])
 
-.controller('ContactCtrl', function($scope, ContactFactory) {
+// .run(function($rootScope){
+
+// //event, toState, toParams, fromState, fromParams
+// $rootScope.$on('$stateChangeStart', function(){console.info("start", arguments)});
+
+// $rootScope.$on('$stateChangeError', function(){console.info("error", arguments)});
+
+// $rootScope.$on('$stateChangeSuccess', function(){console.info("success", arguments)})
+// })
+
+.controller('ContactCtrl', ["$scope", "ContactFactory", function($scope, ContactFactory) {
     $scope.ContactFactory = ContactFactory;
     $scope.contactSubmit = function(){
         ContactFactory.submit($scope.message, $scope.email, $scope.subject)
@@ -42,9 +53,9 @@ angular.module('denialGuideApp', ['ui.router'])
             console.error("There was an error submitting request")
         });
     };
-})
+}])
 
-.factory('ContactFactory', function($http, $log) {
+.factory('ContactFactory', ["$http", "$log", function($http, $log) {
     var factory = {};
     factory.submit = function(message, email, subject) {
         $log.log(message, email, subject);
@@ -56,23 +67,23 @@ angular.module('denialGuideApp', ['ui.router'])
         });
     };
     return factory;
-})
+}])
 
-.controller('DenialCodeCtrl', function($scope, DenialCodeFactory) {
+.controller('DenialCodeCtrl', ["$scope", "DenialCodeFactory",function($scope, DenialCodeFactory) {
     DenialCodeFactory.getCodes().then(function(response) {
         $scope.codes = response.data;
     }, function(reason) {
         $scope.error = reason;
     });
-})
+}])
 
-.factory('DenialCodeFactory', function($http, $log) {
+.factory('DenialCodeFactory', ["$http", "$log", function($http, $log) {
     var factory = {};
     factory.getCodes = function() {
     return $http.get('php/denial.php');
     }
 return factory;
-})
+}])
 
 .filter('denialCodeFilter', function(){
     return function(allCodes, searchTerm){

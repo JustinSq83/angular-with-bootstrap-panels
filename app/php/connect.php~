@@ -3,7 +3,7 @@ $dsn = 'mysql:dbname=denial_guide_app;host=localhost';
 
 $user = 'root';
 
-$password = '*************************';
+$password = 'cc54f7c2f0983f52024304e486bfaf54d5234f90c02b510b';
 
 try {
     $dbh = new PDO($dsn, $user, $password);

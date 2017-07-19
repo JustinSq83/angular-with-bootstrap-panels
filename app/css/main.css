@@ -40,7 +40,7 @@ strong {
 }
 
 body {
-  background: url(https://shariaunveiled.files.wordpress.com/2012/07/statue-of-liberty-face-sketch-drawing.jpg) no-repeat center center fixed; 
+  background: url("../images/statue-of-liberty.jpg") no-repeat center center fixed; 
 -webkit-background-size: 74.8%;
 -moz-background-size: 74.8%;
 -o-background-size: 74.8%;

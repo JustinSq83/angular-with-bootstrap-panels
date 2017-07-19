@@ -3,7 +3,7 @@ $dsn = 'mysql:dbname=denial_guide_contact;host=localhost';
 
 $user = 'root';
 
-$password = '@Max2345';
+$password = '****************************';
 
 try {
     $dbh = new PDO($dsn, $user, $password);
