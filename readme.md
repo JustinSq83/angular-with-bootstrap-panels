@@ -1,39 +1,24 @@
-# This Repo is depreciated
-**This repo is no longer being maintained.  Please use build "[SuperCell](https://github.com/joellongie/SuperCell)".**
+# DME Denial Guide
+*An efficient application utilizing AngularJS and Bootstrap Panels. All data is fetched from a MySQL database using PHP.  All routing is handled via UI-Router.*
 
-# JL Gulp Starter 0.2
+### **Please visit www.dmedenialguide.com to see the application in action.**
 
-jlGulp starter is my former front-end framework using Gulp, Node, Sass, Susy, Breakpoint, SourceMaps, Browser-Sync, Autoprefixer and Uglify / Concat. This is a complete rewrite from version 0.1.
+A relatively simple AngularJS application can be very effective, and also aesthetically pleasing when Bootstrap is used for styling.  It can also be highly efficient when used in conjunction with a MySQL database and PHP.  This application allows for multiple headings to be searched and filtered through a search box.  The data is then displayed using a Bootstrap component called Panels.  There is a section for a heading and another section for a body.
 
-**Prior Ruby and Compass dependency have been removed and no longer required the use of any Ruby.**
+DME Denial Guide is designed to assist in appealing and resubmitting durable medical equipment (DME) claims that have been denied by Medicare.  The headings are denial codes used by Medicare.  They can be searched and filtered through the search box.  The first section of the panel is the denial code explanation, it is the definition of the denial that is used by Medicare.  The second section of the panel is the action to take to get the claim paid.  Some claims need to be appealed, and some claims can be corrected and resubmitted for payment.
 
-## Install Packages
+**The text below offers a description of some core AngularJS concepts.  Please follow the hyperlinks to different files of this application.  They will show the coding within each file that corresponds to the concepts being described.**
 
-After cloning the project to your computer run the following command in your terminal to install all required node and bower packages.
+AngularJS is a front-end web application framework used to develop single page applications.  It is designed using a model-view-controller for user interaction.  The model is responsible for maintaining data.  In this case the data comes from a MySQL database using PHP.  The view then displays the data to the user.  This would be the denial code, explanation, and action that the user sees on their screen.  The model and view communicate with each other via data binding.  The view can be thought of as a projection of the model.  When data in the model is changed, it is reflected in the view.  Likewise when the user manipulates the data in the view, the model is updated.  When a user searches for a specific denial code, the view and the model are in sync.
 
-	1.  sudo npm install && bower install	
-		
+AngularJS uses a method called dependency injection to pass an object to a function.  This means that objects do not need to be created inside a function, and dependencies are simply “injected” into the function.  With that said, AngularJS controllers are a function that define the data in an application.  Controllers manage the interactions between the model and the view.  An object called $scope (the “$” is a prefix used to identify an AngularJS predefined service) is passed into the controller function and bound into the view via dependency injection.  The $scope is then given a property called “codes.”  In this case it is an array of all the denial codes in the application.  As the user types in the denial code, the data is filtered down.  The $scope is what holds the view and model together and keeps them in sync.  This is one of the most vital features of AngularJS.
 
-## Start
+Routes are what direct the view to different sections of a single page application without reloading the entire application.  Only part of the shell page changes in each view, and only the part that changes is loaded..  This application utilizes a framework called UI-Router.  Routing usually starts with a configuration file.  Within this file there are two dependencies, the $urlRouterProvider and $stateProvider.  The $urlRouterProvider redirects from one URL to another, and the $stateProvider creates a new application state.  These dependencies change the application view based on the state of the application, not just the route URL.
 
-	gulp
+Factories in AngularJS are used to fetch data.  They essentially create and return an object that can be used to work with data.  This allows the controller to be solely used for data binding using $scope. This separates duties within the application and makes it more manageable.  Likewise, another AngularJS service called $http is injected (dependency injection) into the factory.  This service makes a request to a server and returns a response.  In turn this response is passed through a function that has a data property.  The data retrieved is then assigned to a property on the $scope object, making it available in the view.
 
-## Build
+This only scratches the surface on how AngularJS is utilized within this application.  However the model-view-controller design pattern and data binding are at the core of any AngularJS application.  Dependency injection is also used extensively across the entire AngularJS framework.  Separating tasks and making them dependant of one another makes the application more manageable, and makes the code reusable with different applications.
 
-Create a deployment build with the following commands:
+### **Please visit www.dmedenialguide.com to see the application in action.**
 
-	gulp build
 
-## Test App Build
-
-To fire up a server and test the final build:
-
-	gulp build:serve
-
----------------------------------------
-
-## gulpfile.js
-Javascript concatenation is done in the config object in the guilpfile.  This controls the order as well as files to be be concatenated.  I went with a simple system in anticipation of ES6 built-in modules.  The config object also controls which files are EXCLUDED from the final build.
-
-## .bowerrc
-Controls the location where bower packages will be installed.
